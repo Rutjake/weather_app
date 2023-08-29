@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 
 // Api Key And Base
 const api = {
-  key: "052e03b09d72e1f565223318e363281a",
+  key: "Hidded :)",
   base: "https://api.openweathermap.org/data/2.5/",
   units: "metric",
   lang: "fi"
