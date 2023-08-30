@@ -25,7 +25,7 @@ main {
   font-family: 'Kanit', sans-serif;
   padding: 20px;
   margin: 0 auto;
-  border-radius: 6px;
+  border-radius: 10px;
   max-width: 70%;
   background-color: rgba(47, 68, 114, 0.6);
 }
@@ -34,8 +34,14 @@ main {
   border-radius: 5px;
   font-size: medium;
 }
+.search_button {
+  margin-top: 2px;
+  border-radius: 5px;
+  font-size: medium;
+  background-color: rgb(161, 231, 204);
+}
 .location {
-  color: beige;
+  color: rgb(255, 255, 255);
   margin-top: 10px;
   font-size: large;
   font-weight: 400;
@@ -60,7 +66,7 @@ main {
   margin-top: 20px ;
   background-color: rgba(15, 9, 66, 0.5);
   border-radius: 8px;
-  padding: 15px 25px;
+  padding: 25px 25px;
   color: #FFF;
   font-size: large;
   font-weight: 900;
@@ -84,7 +90,7 @@ main {
 .feels {
   float: right;
   margin: 0 auto;
-  color: #6cdff3;
+  color: #FFF;
 
 }
 .desc {
@@ -92,6 +98,7 @@ main {
   margin: 0 auto;
   color: #FFF;
   font-size: medium;
+  text-transform: capitalize;
 }
 h1 {
   color: #FFF;
@@ -105,7 +112,7 @@ h1 {
   min-height: 5vh;
 }
 .wind {
-  color: #FFF;
+  color: #6cdff3;
 }
 hr {
   border: 1px solid rgb(39, 55, 124);

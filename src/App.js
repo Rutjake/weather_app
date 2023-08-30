@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 
 // Api Key And Base
 const api = {
-  key: "Hidded :)",
+  key: "",
   base: "https://api.openweathermap.org/data/2.5/",
   units: "metric",
   lang: "fi"
@@ -16,14 +16,22 @@ function App() {
   const [weather, setWeather] = useState({});
 
   // Fetch From Api
-  const search = (evt) => {
-    if (evt.key === "Enter") {
+  const search = () => {
+    if (query === "") {
+      alert("Kirjoita kaupungin nimi");
+    }
+    else {
       fetch(`${api.base}weather?q=${query}&lang=${api.lang}&units=${api.units}&appid=${api.key}`)
         .then(res => res.json())
         .then(result => {
+          if (result.cod === "404"){
+            alert("404 Kaupunkia ei löydy")
+          }
+          else {
           setWeather(result);
           setQuery('');
-          // console.log(result)
+          //console.log(result)
+          }
         });
     }
   }
@@ -34,9 +42,19 @@ function App() {
     let icon_url = "https://openweathermap.org/img/wn/";
     let format = ".png";
 
-  return `${icon_url}${get_icon}${format}`;
+    return `${icon_url}${get_icon}${format}`;
 
-}
+  }
+
+  const handleButton = () => {
+    search();
+  }
+
+  const handleKey = (evt) => {
+    if (evt.key === "Enter") {
+      search();
+    }
+  }
   // Get Current Date
   const dates = (d) => {
     // Date lists
@@ -55,7 +73,7 @@ function App() {
 
   return (
     <div className="app">
-      <div className={(typeof weather.main != "undefined") ? ((weather.main.temp > 16) ? 'app warm' : 'app') : 'app'}>
+      <div className={(typeof weather.main != "undefined") ? ((weather.main.temp > 12) ? 'app warm' : 'app') : 'app'}>
         <main>
           <div className='content_box'>
             <h1>Sää nyt</h1>
@@ -63,11 +81,14 @@ function App() {
               <input
                 type="text"
                 className="search_bar"
-                placeholder="Hae"
+                placeholder="Kaupunki..."
                 onChange={e => setQuery(e.target.value)}
                 value={query}
-                onKeyDown={search}
+                onKeyDown={handleKey}
               />
+              <div className="btn">
+                <button className="search_button" onClick={handleButton}>Hae</button>
+              </div>
             </div>
             {(typeof weather.main != "undefined") ? (
               <div>
@@ -99,7 +120,7 @@ function App() {
                   <div className="humidity">
                     Kosteus: {weather.main.humidity}%
                   </div>
-                 
+
                   <div className="wind">
                     Tuulen nopeus: {weather.wind.speed} m/s
                   </div>
