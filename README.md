@@ -13,7 +13,7 @@ You can try the builded version at:<br>
 https://rutjake.github.io/weather_app_build/
 
 ## Run the app yourself:
-Install React <br>
+Create React app: <br>
 
 ### `npx create-react-app (app name)`
 ### `cd (app folder)`
