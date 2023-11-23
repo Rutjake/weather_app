@@ -9,8 +9,12 @@ The app retrieves data from the OpenWeather api<br>
 https://openweathermap.org/
 
 ## Builded version
-You can try the Builded version at:<br>
+You can try the builded version at:<br>
 https://rutjake.github.io/weather_app_build/
+
+Install React <br>
+https://react.dev/learn/installation
+
 ## Available Scripts
 
 In the project directory, you can run:
