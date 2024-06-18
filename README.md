@@ -13,13 +13,8 @@ https://openweathermap.org/<br><br>
 You can try the builded version at:<br>
 https://rutjake.github.io/weather_app_build/
 
-## Run the app yourself:
-Create React app: <br>
 
-### `npx create-react-app (app name)`
-### `cd (app folder)`
-
-More info:<br>
+React Installation:<br>
 https://react.dev/learn/installation
 
 In the project directory, you can run:
